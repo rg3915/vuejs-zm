@@ -2,7 +2,7 @@
 
 Tutorial de VueJS do canal [PHP-ZM](https://www.youtube.com/watch?v=S42fJjanOMI&list=PLMpauGt6IneTSB5P8wLXp5qdQ6XBnDXMz).
 
-
+[GitHub.com/phpzm/vuejs-basico](https://github.com/phpzm/vuejs-basico)
 
 ## Rodando um servidor local
 
