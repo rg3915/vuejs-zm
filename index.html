@@ -42,6 +42,7 @@
   <h1>Interfaces com VueJS do grupo de PHP da Zona da Mata Mineira</h1>
   <a href="https://www.youtube.com/watch?v=S42fJjanOMI&list=PLMpauGt6IneTSB5P8wLXp5qdQ6XBnDXMz">Canal no YouTube</a>
 
+  <!-- Se vc não declarar o :message="message", então será retornado o valor default do componente -->
   <my-nav @toggle="update" :message="message"></my-nav>
   <my-aside></my-aside>
   <my-main></my-main>
@@ -50,7 +51,10 @@
   <script>
     Vue.component('my-nav', {
       props: {
-        message: String
+        message: {
+          type: String,
+          default: 'App title'
+        }
       },
       template: `<nav> <button @click="$emit('toggle')">#</button> {{ message }} </nav>`,
     })
