@@ -22,8 +22,16 @@
       float: left;
       width: 30vw;
     }
+    .open > aside {
+      transform: translate(-33vw);
+      transition: transform .3s;
+    }
     main {
       margin-left: 33vw;
+      transition: margin-left .3s;
+    }
+    .open > main {
+      margin-left: 0;
     }
   </style>
 </head>
