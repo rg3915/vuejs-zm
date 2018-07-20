@@ -23,8 +23,8 @@
 
   <!-- Se vc não declarar o :message="message", então será retornado o valor default do componente -->
   <my-nav @toggle="update" :message="message"></my-nav>
-  <my-aside></my-aside>
-  <my-main></my-main>
+  <my-aside :message="message"></my-aside>
+  <my-main v-model="message"></my-main>
 </div>
 
 <script type="text/javascript" src="static/js/my-section.js"></script>

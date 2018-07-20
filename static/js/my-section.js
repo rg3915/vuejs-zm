@@ -1,9 +1,19 @@
 Vue.component('my-section', {
-  template: `<section :style="style"><div class="fill"> My Section </div></section>`,
-  data: () => ({
-    style: {
-      background: 'yellow'
+    template: `<section :style="style">
+                    <div class="fill"> 
+                        My Section
+                        <input type="text" v-model="model"> 
+                    </div>
+                </section>`,
+    data: () => ({
+        style: {
+            background: 'yellow'
+        },
+        model: ''
+    }),
+    watch: {
+        model () {
+            this.$emit('input', this.model)
+        }
     }
-  })
 })
-
