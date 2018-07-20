@@ -9,7 +9,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <!-- Font-awesome -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://unpkg.com/vue"></script>
+  <!-- <script src="https://unpkg.com/vue"></script> -->
+  <script src="vue.js"></script>
 </head>
 <body>
   <div id="app">
@@ -17,6 +18,8 @@
   <h1>Interfaces com VueJS do grupo de PHP da Zona da Mata Mineira</h1>
   <a href="https://www.youtube.com/watch?v=S42fJjanOMI&list=PLMpauGt6IneTSB5P8wLXp5qdQ6XBnDXMz">Canal no YouTube</a>
 
+  <my-nav></my-nav>
+  <my-main></my-main>
 
 
     <input id="id_message" name="message" type="text" v-model="message"/>
@@ -26,6 +29,14 @@
   <script>
     var app = new Vue({
       el: '#app',
+      components: {
+        'my-nav': {
+          template: `<nav> My Nav </nav>`
+        },
+        'my-main': {
+          template: `<main> My Main </main>`
+        }
+      },
       data: {
         message: null
       }
