@@ -49,7 +49,9 @@
 
   <script>
     Vue.component('my-nav', {
-      props: ['message'],
+      props: {
+        message: String
+      },
       template: `<nav> <button @click="$emit('toggle')">#</button> {{ message }} </nav>`,
     })
 
