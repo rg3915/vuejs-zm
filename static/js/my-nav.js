@@ -5,5 +5,5 @@ Vue.component('my-nav', {
       default: 'App title'
     }
   },
-  template: `<nav> <button @click="$emit('toggle')">#</button> {{ message }} </nav>`,
+  template: `<nav><div class="fill"> <button @click="$emit('toggle')">#</button> {{ message }} </div></nav>`,
 })
