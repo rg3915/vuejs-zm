@@ -28,12 +28,12 @@
   </style>
 </head>
 <body>
-  <div id="app">
+  <div id="app" :class="{'open': open}">
 
   <h1>Interfaces com VueJS do grupo de PHP da Zona da Mata Mineira</h1>
   <a href="https://www.youtube.com/watch?v=S42fJjanOMI&list=PLMpauGt6IneTSB5P8wLXp5qdQ6XBnDXMz">Canal no YouTube</a>
 
-  <my-nav></my-nav>
+  <my-nav @toggle="toggle"></my-nav>
   <my-aside></my-aside>
   <my-main></my-main>
 
@@ -44,7 +44,7 @@
 
   <script>
     Vue.component('my-nav', {
-      template: `<nav> {{ title }} </nav>`,
+      template: `<nav> <button @click="$emit('toggle')">#</button> {{ title }} </nav>`,
       data: () => ({
         title: 'My Pretty Nav'
       })
@@ -62,13 +62,24 @@
     })
 
     Vue.component('my-section', {
-      template: `<section> My Section </section>`
+      template: `<section :style="style"> My Section </section>`,
+      data: () => ({
+        style: {
+          background: 'yellow'
+        }
+      })
     })
 
     var app = new Vue({
       el: '#app',
       data: {
-        message: null
+        message: null,
+        open: false
+      },
+      methods: {
+        toggle () {
+          this.open = !this.open
+        }
       }
     })
   </script>
