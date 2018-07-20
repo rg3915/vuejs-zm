@@ -17,17 +17,15 @@
 <body>
 
 <div id="app" :class="{'open': open}">
-
-  <h1>Interfaces com VueJS do grupo de PHP da Zona da Mata Mineira</h1>
-  <a href="https://www.youtube.com/watch?v=S42fJjanOMI&list=PLMpauGt6IneTSB5P8wLXp5qdQ6XBnDXMz">Canal no YouTube</a>
-
   <!-- Se vc não declarar o :message="message", então será retornado o valor default do componente -->
+  <my-navmain @toggle="update"></my-navmain>
   <my-nav @toggle="update" :message="message"></my-nav>
   <my-aside :message="message"></my-aside>
   <my-main v-model="message"></my-main>
 </div>
 
 <script type="text/javascript" src="static/js/my-section.js"></script>
+<script type="text/javascript" src="static/js/my-navmain.js"></script>
 <script type="text/javascript" src="static/js/my-nav.js"></script>
 <script type="text/javascript" src="static/js/my-main.js"></script>
 <script type="text/javascript" src="static/js/my-aside.js"></script>
