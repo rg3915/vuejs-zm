@@ -1,6 +1,6 @@
 # vuejs-zm
 
-Tutorial de VueJS do canal [PHP-ZM](https://www.youtube.com/watch?v=S42fJjanOMI&list=PLMpauGt6IneTSB5P8wLXp5qdQ6XBnDXMz)
+Tutorial de VueJS do canal [PHP-ZM](https://www.youtube.com/watch?v=S42fJjanOMI&list=PLMpauGt6IneTSB5P8wLXp5qdQ6XBnDXMz).
 
 
 

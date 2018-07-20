@@ -2,10 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="https://vuejs.org/images/logo.png">
   <title>VueJS ZM</title>
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- Font-awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
+  <div id="app">
+
   <h1>Interfaces com VueJS do grupo de PHP da Zona da Mata Mineira</h1>
   <a href="https://www.youtube.com/watch?v=S42fJjanOMI&list=PLMpauGt6IneTSB5P8wLXp5qdQ6XBnDXMz">Canal no YouTube</a>
+
+
+
+    <input id="id_message" name="message" type="text" v-model="message"/>
+    <p>{{ message }}</p>
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: null
+      }
+    })
+  </script>
 </body>
 </html>
