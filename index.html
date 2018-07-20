@@ -45,11 +45,9 @@
   <script>
     Vue.component('my-nav', {
       template: `<nav> {{ title }} </nav>`,
-      data: function () {
-        return {
-          title: 'My Pretty Nav'
-        }
-      }
+      data: () => ({
+        title: 'My Pretty Nav'
+      })
     })
 
     Vue.component('my-aside', {
