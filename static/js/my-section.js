@@ -1,8 +1,10 @@
 Vue.component('my-section', {
   mixins: [ Mixin],
+  props: ['message'],
   template: `<section :style="style">
           <div class="fill"> 
-            My Section
+            My Section <br>
+            {{ reverse }}
             <input type="text" v-model="model"> 
           </div>
         </section>`,
@@ -12,6 +14,14 @@ Vue.component('my-section', {
     },
     model: ''
   }),
+  computed: {
+    reverse () {
+      return this.model.split('').reverse().join('')
+    }
+  },
+  mounted () {
+    this.model = this.message
+  },
   watch: {
     model () {
       this.$emit('input', this.model)
