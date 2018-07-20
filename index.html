@@ -12,28 +12,7 @@
   <!-- <script src="https://unpkg.com/vue"></script> -->
   <script src="vue.js"></script>
 
-  <style type="text/css">
-    nav, aside, main, section {
-      border: 1px dotted red;
-      padding: 1vw;
-      margin-top: 4vh;
-    }
-    aside {
-      float: left;
-      width: 30vw;
-    }
-    .open > aside {
-      transform: translate(-33vw);
-      transition: transform .3s;
-    }
-    main {
-      margin-left: 33vw;
-      transition: margin-left .3s;
-    }
-    .open > main {
-      margin-left: 0;
-    }
-  </style>
+  <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
 
@@ -48,49 +27,11 @@
   <my-main></my-main>
 </div>
 
-  <script>
-    Vue.component('my-nav', {
-      props: {
-        message: {
-          type: String,
-          default: 'App title'
-        }
-      },
-      template: `<nav> <button @click="$emit('toggle')">#</button> {{ message }} </nav>`,
-    })
-
-    Vue.component('my-aside', {
-      template: `<aside v-html="title"></aside>`,
-      data: () => ({
-        title: 'My <b>Beauty</b> Nav'
-      })
-    })
-
-    Vue.component('my-main', {
-      template: `<main> My Main <my-section></my-section> </main>`
-    })
-
-    Vue.component('my-section', {
-      template: `<section :style="style"> My Section </section>`,
-      data: () => ({
-        style: {
-          background: 'yellow'
-        }
-      })
-    })
-
-    var app = new Vue({
-      el: '#app',
-      data: {
-        message: 'phpzm.rocks',
-        open: false
-      },
-      methods: {
-        update () {
-          this.open = !this.open
-        }
-      }
-    })
-  </script>
+<script type="text/javascript" src="static/js/my-section.js"></script>
+<script type="text/javascript" src="static/js/my-nav.js"></script>
+<script type="text/javascript" src="static/js/my-main.js"></script>
+<script type="text/javascript" src="static/js/my-aside.js"></script>
+<!-- instance Vue -->
+<script type="text/javascript" src="static/js/my-app.js"></script>
 </body>
 </html>
