@@ -36,26 +36,21 @@
   </style>
 </head>
 <body>
-  <div id="app" :class="{'open': open}">
+
+<div id="app" :class="{'open': open}">
 
   <h1>Interfaces com VueJS do grupo de PHP da Zona da Mata Mineira</h1>
   <a href="https://www.youtube.com/watch?v=S42fJjanOMI&list=PLMpauGt6IneTSB5P8wLXp5qdQ6XBnDXMz">Canal no YouTube</a>
 
-  <my-nav @toggle="update"></my-nav>
+  <my-nav @toggle="update" :message="message"></my-nav>
   <my-aside></my-aside>
   <my-main></my-main>
-
-
-    <input id="id_message" name="message" type="text" v-model="message"/>
-    <p>{{ message }}</p>
-  </div>
+</div>
 
   <script>
     Vue.component('my-nav', {
-      template: `<nav> <button @click="$emit('toggle')">#</button> {{ title }} </nav>`,
-      data: () => ({
-        title: 'My Pretty Nav'
-      })
+      props: ['message'],
+      template: `<nav> <button @click="$emit('toggle')">#</button> {{ message }} </nav>`,
     })
 
     Vue.component('my-aside', {
@@ -81,7 +76,7 @@
     var app = new Vue({
       el: '#app',
       data: {
-        message: null,
+        message: 'phpzm.rocks',
         open: false
       },
       methods: {
